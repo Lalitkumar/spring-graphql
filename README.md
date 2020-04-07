@@ -1,36 +1,36 @@
 # Spring Boot with GraphQL Query Example
 
-## Book Store
-- `/rest/books` is the REST resource which can fetch Books information
-- DataFetchers are Interfaces for RuntimeWiring of GraphQL with JpaRepository
+## User info
+- `/rest/users` is the REST resource which can fetch user information
+- DataFetchers are Interfaces for RuntimeWiring of GraphQL with JpaRepository / back end services
 
 ## Sample GraphQL Scalar Queries
-- Accessible under `http://localhost:8091/rest/books`
-- Usage for `allBooks`
+- Accessible under `http://localhost:8091/rest/users`
+- Usage for `allUsers`
 `{
-   allBooks {
-     isn
-     title
-     authors
-     publisher
+   allUsers {
+     id
+     firstName
+     lastName
+     dob
    }
  }`
-- Usage for `book`
+- Usage for `User`
 `{
    book(id: "123") {
-     title
-     authors
-     publisher
+     id
+     firstName
+     lstName
    }`
-- Combination of both `allBooks` and `book`
+- Combination of both `allUsers` and `User`
 `{
-   allBooks {
-     title
-     authors
+   allUsers {
+     id
+     firstName
    }
-   book(id: "124") {
-     title
-     authors
-     publisher
+   user(id: "124") {
+     id
+     firstName
+     lastName
    }
  }`
