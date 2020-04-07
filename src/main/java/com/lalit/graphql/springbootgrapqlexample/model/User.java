@@ -1,14 +1,7 @@
 package com.lalit.graphql.springbootgrapqlexample.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Table
-@Entity
 public class User {
 
-    @Id
     private String id;
     private String firstName;
     private String lastName;

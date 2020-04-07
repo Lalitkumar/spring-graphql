@@ -39,9 +39,6 @@ public class GraphQLService {
 
     @PostConstruct
     public void loadSchema()throws IOException{
-
-        loadDataIntHSQL();
-
         File schemaFile = resource.getFile();
 
         TypeDefinitionRegistry typeRegistry = new SchemaParser().parse(schemaFile);
@@ -58,7 +55,7 @@ public class GraphQLService {
                 .build();
     }
 
-    private void loadDataIntHSQL(){
+    /*private void loadDataIntHSQL(){
         Stream.of(
                 new User("1", "Lalit", "Thakare", "19 Sep 89"),
                 new User("2", "Pooja", "Thakare", "18 April 93"),
@@ -66,7 +63,7 @@ public class GraphQLService {
         ).forEach(user -> {
             userRepository.save(user);
         });
-    }
+    }*/
 
     public GraphQL getGraphQL() {
         return graphQL;
